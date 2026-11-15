@@ -30,10 +30,10 @@ The agent drives seven open-source scanners it expects to find on `PATH` (or und
 | [subfinder](https://github.com/projectdiscovery/subfinder) | subdomain enumeration (recon) | `go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest` | `brew install subfinder` |
 | [nmap](https://nmap.org) | port and service discovery | `sudo apt install nmap` | `brew install nmap` |
 | [sslyze](https://github.com/nabla-c0d3/sslyze) | TLS configuration | `pipx install sslyze` | `pipx install sslyze` |
-| [nikto](https://github.com/sullo/nikto) | web server misconfiguration | `git clone https://github.com/sullo/nikto ~/.local/nikto && export SHIELDSCAN_NIKTO_BINARY=~/.local/nikto/program/nikto.pl` | `brew install nikto` |
+| [nikto](https://github.com/sullo/nikto) | web server misconfiguration | `sudo apt install libxml-writer-perl libnet-ssleay-perl libio-socket-ssl-perl && git clone https://github.com/sullo/nikto ~/.local/nikto && export SHIELDSCAN_NIKTO_BINARY=~/.local/nikto/program/nikto.pl SHIELDSCAN_NIKTO_TLS_CAPABLE=1` | `brew install nikto` |
 | [wapiti](https://github.com/wapiti-scanner/wapiti) | web application scanner | `pipx install wapiti3` | `pipx install wapiti3` |
 
-Nuclei templates live in `~/nuclei-templates` by default (`SHIELDSCAN_NUCLEI_TEMPLATES` to change). Each tool can also be pointed at explicitly with `SHIELDSCAN_<TOOL>_BINARY`.
+On a machine without Go, the three ProjectDiscovery tools are also published as binaries: download `<tool>_<version>_linux_<arch>.zip` from each project's GitHub releases page and unzip the binary into `~/.local/bin`. Nuclei templates live in `~/nuclei-templates` by default (`SHIELDSCAN_NUCLEI_TEMPLATES` to change). Each tool can also be pointed at explicitly with `SHIELDSCAN_<TOOL>_BINARY`.
 
 ## Enrol
 
